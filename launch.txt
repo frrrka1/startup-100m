@@ -1,1 +1,0 @@
-Replace the contact links in index.html before real launch.
