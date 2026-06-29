@@ -1,6 +1,15 @@
-# Local Digital Check
+# Витрина Check
 
-MVP landing page for a small local digital service: Google Maps profile cleanup, mini sites, QR for reviews and simple PDF/menu materials.
+Static one-page site for a junior digital creator in Bulgaria.
+
+The landing sells a practical **online presence mini audit** for local businesses instead of generic “web design” or “SEO” services.
+
+## Core offer
+
+- Безплатен мини аудит — €0
+- Google Maps Basic — €30–50
+- Мини сайт — €100–200
+- PDF / меню / QR — €30–80
 
 ## Stack
 
@@ -12,11 +21,8 @@ Static site:
 
 Ready for Vercel deployment with framework preset `Other`.
 
-## Before publishing
+## Contact
 
-Replace placeholder messenger links in `index.html`:
+Phone used for Viber / WhatsApp / tel links:
 
-- `viber://chat?number=%2B359000000000`
-- `https://wa.me/359000000000`
-
-Use the real business contact number in international format.
+`+359884343110`

@@ -3,178 +3,356 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Дигитална проверка за малък бизнес</title>
-  <meta name="description" content="Подреждане на Google Maps профил, мини сайт, QR за отзиви и PDF меню/цени за малък бизнес." />
-  <meta name="theme-color" content="#f8fbff" />
+  <title>Витрина Check — мини аудит за локален бизнес</title>
+  <meta name="description" content="Безплатен мини аудит на онлайн присъствието: Google Maps профил, контакти, снимки, отзиви, мини сайт, PDF меню и QR код за малък бизнес в България." />
+  <meta name="theme-color" content="#f6f9fb" />
+  <meta property="og:title" content="Витрина Check — проверка на онлайн присъствието" />
+  <meta property="og:description" content="Пратете линк към Google Maps профила или сайта. Получавате кратка, честна проверка какво вижда клиентът преди да ви се обади." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="page-glow page-glow--blue" aria-hidden="true"></div>
-  <div class="page-glow page-glow--green" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb--blue" aria-hidden="true"></div>
+  <div class="orb orb--mint" aria-hidden="true"></div>
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Начало">
-      <span class="brand-mark">●</span>
-      <span>Local Digital Check</span>
+      <span class="brand-mark" aria-hidden="true">
+        <span></span>
+      </span>
+      <span class="brand-text">
+        <strong>Витрина Check</strong>
+        <small>за локален бизнес</small>
+      </span>
     </a>
+
     <nav class="nav" aria-label="Основна навигация">
-      <a href="#services">Услуги</a>
+      <a href="#audit">Проверка</a>
+      <a href="#offers">Услуги</a>
       <a href="#case">Пример</a>
       <a href="#contact">Контакт</a>
     </nav>
+
+    <a class="header-cta" data-contact="viber" href="#">Безплатен аудит</a>
   </header>
 
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">За малък бизнес, който иска да изглежда адекватно онлайн</p>
-        <h1>Преди клиентът да се обади, той вече ви е проверил.</h1>
-        <p class="lead">
-          Подреждам основните неща, които клиентът вижда в Google Maps и на мини сайт:
-          какво предлагате, как изглеждате, как да ви намерят и как да се свържат с вас.
+        <p class="eyebrow">
+          <span></span>
+          Безплатен мини аудит за малък бизнес
         </p>
+        <h1>Клиентът ви проверява онлайн, преди да звънне.</h1>
+        <p class="lead">
+          Гледам Google Maps профила, снимките, контактите, отзивите и мини сайта така,
+          както ги вижда нормален клиент. После казвам кое е ясно, кое липсва и кое пречи.
+        </p>
+
         <div class="hero-actions">
-          <a class="button button-primary" href="viber://chat?number=%2B359000000000">Получить бесплатный аудит</a>
-          <a class="button button-ghost" href="https://wa.me/359000000000">Пиши в WhatsApp</a>
+          <a class="button button-primary" data-contact="viber" href="#">Прати линк за аудит</a>
+          <a class="button button-soft" data-contact="whatsapp" href="#">Пиши в WhatsApp</a>
         </div>
-        <p class="note">Без тежки думи. Без обещания за първо място в Google. Само нещата, които реално се виждат.</p>
+
+        <div class="trust-row" aria-label="Какво включва">
+          <span>Google Maps</span>
+          <span>снимки</span>
+          <span>отзиви</span>
+          <span>мини сайт</span>
+          <span>QR / PDF</span>
+        </div>
       </div>
 
-      <div class="audit-card reveal" aria-label="Примерна проверка">
-        <div class="audit-top">
-          <div>
-            <span class="mini-label">Бърза проверка</span>
-            <h2>Онлайн витрина</h2>
+      <div class="scanner-wrap reveal" aria-label="Примерна проверка на онлайн витрина">
+        <div class="scanner-card">
+          <div class="scanner-top">
+            <div>
+              <span class="mini-label">онлайн витрина</span>
+              <h2>Audit preview</h2>
+            </div>
+            <div class="score">
+              <strong data-score="64">64</strong>
+              <span>/100</span>
+            </div>
           </div>
-          <span class="status-dot">live</span>
+
+          <div class="scan-window" aria-hidden="true">
+            <div class="browser-dots"><i></i><i></i><i></i></div>
+            <div class="scan-beam"></div>
+            <div class="map-pin"></div>
+            <div class="preview-lines">
+              <span class="line wide"></span>
+              <span class="line"></span>
+              <span class="line short"></span>
+            </div>
+          </div>
+
+          <ul class="status-list">
+            <li>
+              <span>Google Maps профил</span>
+              <b class="status status-warn">може по-добре</b>
+            </li>
+            <li>
+              <span>Снимки и първо впечатление</span>
+              <b class="status status-bad">слабо</b>
+            </li>
+            <li>
+              <span>Отзиви + QR</span>
+              <b class="status status-ok">ок</b>
+            </li>
+            <li>
+              <span>Телефон, адрес, работно време</span>
+              <b class="status status-missing">липсва яснота</b>
+            </li>
+          </ul>
+
+          <div class="scanner-result">
+            <span>Извод</span>
+            <p>Бизнесът може да е добър. Онлайн просто не го показва достатъчно ясно.</p>
+          </div>
         </div>
-        <div class="scan-line" aria-hidden="true"></div>
-        <ul class="check-list">
-          <li><span>Google Maps профил</span><b>за проверка</b></li>
-          <li><span>Снимки и първо впечатление</span><b>важно</b></li>
-          <li><span>Услуги и цени</span><b>яснота</b></li>
-          <li><span>Отзиви и QR код</span><b>доверие</b></li>
-          <li><span>Мини сайт / линк</span><b>контакт</b></li>
-        </ul>
+
+        <div class="floating-note floating-note--one">
+          <span>3–5 точки</span>
+          <p>кратко, конкретно, без роман</p>
+        </div>
+        <div class="floating-note floating-note--two">
+          <span>не SEO магия</span>
+          <p>първо оправяме видимото</p>
+        </div>
       </div>
     </section>
 
-    <section class="section problem-strip reveal">
-      <div class="strip-card">
-        <span>Проблемът</span>
-        <p>Много бизнеси работят нормално, но онлайн изглеждат като да са затворили през 2014.</p>
+    <section class="section intro-strip reveal" id="audit">
+      <div class="intro-card intro-card--wide">
+        <p class="kicker">Главната идея</p>
+        <h2>Не “правя сайт”. Проверявам как изглежда бизнесът ви онлайн.</h2>
       </div>
-      <div class="strip-card">
-        <span>Решението</span>
-        <p>Подреждам видимото: профил, снимки, описание, услуги, контакти, QR и прост сайт.</p>
-      </div>
-      <div class="strip-card">
-        <span>Резултатът</span>
-        <p>Клиентът по-бързо разбира какво правите и по-лесно стига до обаждане или съобщение.</p>
+      <div class="intro-card">
+        <p>Ако човек отвори профила ви и за 15 секунди не разбере какво правите, къде сте и как да ви пише — това е загубено обаждане.</p>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section">
       <div class="section-head reveal">
-        <p class="eyebrow">Пакети за старт</p>
-        <h2>Малки услуги. Бърз ефект. Без агентски цирк.</h2>
+        <p class="eyebrow"><span></span>Къде се губят клиентите</p>
+        <h2>Малки пропуски, които изглеждат дребни. Но клиентът ги вижда.</h2>
       </div>
-      <div class="pricing-grid">
-        <article class="price-card reveal">
-          <div class="price-head">
-            <h3>Мини аудит</h3>
+
+      <div class="issue-grid">
+        <article class="issue-card reveal">
+          <span class="issue-icon">01</span>
+          <h3>Профилът изглежда недовършен</h3>
+          <p>Няма услуги, няма ясно описание, снимките са случайни или старите контакти още стоят.</p>
+        </article>
+        <article class="issue-card reveal">
+          <span class="issue-icon">02</span>
+          <h3>Човек не разбира какво да направи</h3>
+          <p>Да звънне? Да пише във Viber? Да търси цени в Messenger? Колкото повече гадае, толкова по-бързо излиза.</p>
+        </article>
+        <article class="issue-card reveal">
+          <span class="issue-icon">03</span>
+          <h3>Добрият бизнес изглежда по-слаб</h3>
+          <p>В реалността работите добре. Онлайн обаче конкурентът с по-подреден профил изглежда по-надежден.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section offers-section" id="offers">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span></span>Услуги</p>
+        <h2>Пакети като продукти. Без агентски цирк.</h2>
+        <p class="section-lead">Започваме от безплатна проверка. Ако има смисъл — оправяме първото, което реално се вижда.</p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="offer-card offer-card--free reveal">
+          <div class="offer-head">
+            <span>Старт</span>
             <strong>€0</strong>
           </div>
-          <p>Кратка проверка на Google Maps профила: какво липсва, какво обърква клиента и кое да се оправи първо.</p>
+          <h3>Мини аудит</h3>
+          <p>Пращате линк към Google Maps профил, сайт или Facebook страница. Връщам кратък списък с 3–5 неща за подобрение.</p>
+          <ul>
+            <li>какво липсва</li>
+            <li>какво обърква клиента</li>
+            <li>кое да се оправи първо</li>
+          </ul>
         </article>
-        <article class="price-card price-card--accent reveal">
-          <div class="price-head">
-            <h3>Google Maps Basic</h3>
+
+        <article class="offer-card offer-card--main reveal">
+          <div class="badge">най-често</div>
+          <div class="offer-head">
+            <span>Профил</span>
             <strong>€30–50</strong>
           </div>
-          <p>Описание, услуги, работно време, снимки, линкове и QR за отзиви. Основното, което не трябва да стои разхвърляно.</p>
+          <h3>Google Maps Basic</h3>
+          <p>Подреждане на основното: описание, услуги, работно време, линкове, снимки и QR за отзиви.</p>
+          <ul>
+            <li>ясно първо впечатление</li>
+            <li>по-лесен контакт</li>
+            <li>готов линк за споделяне</li>
+          </ul>
         </article>
-        <article class="price-card reveal">
-          <div class="price-head">
-            <h3>Мини сайт</h3>
+
+        <article class="offer-card reveal">
+          <div class="offer-head">
+            <span>Линк</span>
             <strong>€100–200</strong>
           </div>
-          <p>Една ясна страница: услуги, снимки, контакти, карта и директен бутон към Viber или WhatsApp.</p>
+          <h3>Мини сайт</h3>
+          <p>Една страница с услуги, снимки, карта, контакти и бутони към Viber / WhatsApp. Без излишни страници.</p>
+          <ul>
+            <li>мобилна версия</li>
+            <li>ясна структура</li>
+            <li>готов за изпращане на клиенти</li>
+          </ul>
         </article>
-        <article class="price-card reveal">
-          <div class="price-head">
-            <h3>PDF / меню / QR</h3>
+
+        <article class="offer-card reveal">
+          <div class="offer-head">
+            <span>Материали</span>
             <strong>€30–80</strong>
           </div>
-          <p>Подредено меню, ценова листа или малък PDF с QR код. Удобно за салони, кафета, услуги и майстори.</p>
+          <h3>PDF / меню / QR</h3>
+          <p>Меню, ценова листа, кратък PDF или QR за отзиви. Подходящо за кафета, салони, масажи, апартаменти и услуги.</p>
+          <ul>
+            <li>по-чист вид</li>
+            <li>лесно споделяне</li>
+            <li>без “прати ми цените” 12 пъти</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section class="section workflow">
+    <section class="section process-section">
       <div class="section-head reveal">
-        <p class="eyebrow">Как работи</p>
-        <h2>Не губим време в срещи за срещи.</h2>
+        <p class="eyebrow"><span></span>Как става</p>
+        <h2>Три стъпки. Няма среща за среща.</h2>
       </div>
-      <div class="steps">
-        <div class="step reveal"><span>01</span><h3>Пращате линк</h3><p>Google Maps профил, сайт или страница в социалните мрежи.</p></div>
-        <div class="step reveal"><span>02</span><h3>Получавате кратка проверка</h3><p>3–5 конкретни точки. Не роман, не презентация за инвеститори.</p></div>
-        <div class="step reveal"><span>03</span><h3>Оправяме основното</h3><p>Ако има смисъл — подреждам профила, мини сайта или QR/PDF материалите.</p></div>
+
+      <div class="timeline">
+        <div class="step reveal">
+          <span>01</span>
+          <h3>Пращате линк</h3>
+          <p>Google Maps профил, сайт, Facebook страница или каквото клиентът реално вижда първо.</p>
+        </div>
+        <div class="step reveal">
+          <span>02</span>
+          <h3>Получавате проверка</h3>
+          <p>Кратко: кое е ок, кое е слабо, кое липсва и кое може да се оправи бързо.</p>
+        </div>
+        <div class="step reveal">
+          <span>03</span>
+          <h3>Оправяме видимото</h3>
+          <p>Профил, мини сайт, QR, PDF или меню. Първо практичните неща, не “дигитална трансформация”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fit-section">
+      <div class="fit-panel reveal">
+        <div>
+          <p class="eyebrow"><span></span>За кого е</p>
+          <h2>За бизнеси, които работят офлайн, но клиентите ги проверяват онлайн.</h2>
+        </div>
+        <div class="tag-cloud" aria-label="Подходящи бизнеси">
+          <span>майстори</span>
+          <span>автосервизи</span>
+          <span>салони</span>
+          <span>масажи</span>
+          <span>кафета</span>
+          <span>апартаменти</span>
+          <span>локални услуги</span>
+          <span>малки магазини</span>
+        </div>
       </div>
     </section>
 
     <section class="section case-section" id="case">
       <div class="case-card reveal">
         <div class="case-copy">
-          <p class="eyebrow">Пример за реализиран сайт</p>
+          <p class="eyebrow"><span></span>Пример</p>
           <h2>Metrograd</h2>
           <p>
-            Едностраничен сайт за строителна фирма: услуги, контакт, мобилна версия и чиста структура.
-            Това е пример как сложна информация може да се подреди така, че човек да не се изгуби след втория ред.
+            Пример за едностраничен сайт за строителна фирма: ясни услуги, мобилна структура,
+            контакт и нормално първо впечатление. Не е “космос”, просто е подредено.
           </p>
-          <a class="text-link" href="https://metrograd.royal-wall.com/" target="_blank" rel="noreferrer">Виж сайта →</a>
+          <a class="text-link" href="https://metrograd.royal-wall.com/" target="_blank" rel="noreferrer">Виж примера →</a>
         </div>
-        <div class="browser-mock" aria-hidden="true">
-          <div class="browser-bar"><i></i><i></i><i></i></div>
-          <div class="browser-content">
-            <div class="mock-line wide"></div>
-            <div class="mock-line"></div>
-            <div class="mock-grid"><span></span><span></span><span></span></div>
+
+        <div class="case-preview" aria-hidden="true">
+          <div class="case-browser">
+            <div class="browser-dots"><i></i><i></i><i></i></div>
+            <div class="case-hero"></div>
+            <div class="case-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="case-tiles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="case-audit">
+            <strong>преди → след</strong>
+            <span>по-ясна структура</span>
+            <span>по-лесен контакт</span>
+            <span>по-добра мобилна версия</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section faq-section">
+    <section class="section honest-section">
       <div class="section-head reveal">
-        <p class="eyebrow">Честно</p>
-        <h2>Какво не продавам</h2>
+        <p class="eyebrow"><span></span>Честно</p>
+        <h2>Какво не обещавам</h2>
       </div>
-      <div class="faq-grid">
-        <div class="faq-card reveal"><h3>Не обещавам първо място в Google.</h3><p>Това не е сериозно обещание за услуга от €30–50.</p></div>
-        <div class="faq-card reveal"><h3>Не правя “магия с AI”.</h3><p>AI помага, но клиентът вижда подреден профил, добър текст, снимки и лесен контакт.</p></div>
-        <div class="faq-card reveal"><h3>Не ви връзвам с абонамент.</h3><p>Първо оправяме основното. Ако има смисъл — после може поддръжка.</p></div>
+
+      <div class="honest-grid">
+        <article class="honest-card reveal">
+          <h3>Не обещавам “топ 3 в Google”.</h3>
+          <p>Особено не за €30. Това звучи силно, но не е честно.</p>
+        </article>
+        <article class="honest-card reveal">
+          <h3>Не продавам тежка стратегия.</h3>
+          <p>Първо оправяме нещата, които клиентът вижда днес: профил, снимки, контакти, линкове.</p>
+        </article>
+        <article class="honest-card reveal">
+          <h3>Не правя сайт само за да има сайт.</h3>
+          <p>Ако Google Maps профилът е достатъчен за старт, започваме от него.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section class="section contact-section" id="contact">
       <div class="contact-card reveal">
-        <p class="eyebrow">Старт</p>
-        <h2>Искате бърза проверка?</h2>
-        <p>Пратете линк към Google Maps профила или сайта. Ще върна кратък списък какво може да се подобри.</p>
-        <div class="hero-actions center">
-          <a class="button button-primary" href="viber://chat?number=%2B359000000000">Пиши във Viber</a>
-          <a class="button button-ghost" href="https://wa.me/359000000000">Пиши в WhatsApp</a>
+        <p class="eyebrow"><span></span>Безплатен старт</p>
+        <h2>Пратете линк. Ще кажа как изглежда отстрани.</h2>
+        <p>
+          Най-добре изпратете Google Maps профил, сайт или Facebook страница.
+          Ще върна кратък мини аудит с конкретни точки, без големи думи.
+        </p>
+
+        <div class="contact-actions">
+          <a class="button button-primary" data-contact="viber" href="#">Пиши във Viber</a>
+          <a class="button button-soft" data-contact="whatsapp" href="#">Пиши в WhatsApp</a>
         </div>
+
+        <a class="phone-link" href="tel:+359884343110">+359 88 434 3110</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>Local Digital Check</span>
+    <span>Витрина Check</span>
     <span>Google Maps • мини сайтове • QR • PDF</span>
   </footer>
 
