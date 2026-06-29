@@ -1,50 +1,65 @@
 const contactPhone = '359884343110';
 
-const contactLinks = document.querySelectorAll('a[href*="359000000000"]');
-contactLinks.forEach((link) => {
-  if (link.href.startsWith('viber:')) {
-    link.href = `viber://chat?number=%2B${contactPhone}`;
-  }
+const contactUrls = {
+  viber: `viber://chat?number=%2B${contactPhone}`,
+  whatsapp: `https://wa.me/${contactPhone}`,
+};
 
-  if (link.href.includes('wa.me')) {
-    link.href = `https://wa.me/${contactPhone}`;
+document.querySelectorAll('[data-contact]').forEach((link) => {
+  const channel = link.dataset.contact;
+  if (contactUrls[channel]) {
+    link.href = contactUrls[channel];
   }
 });
 
-const heroAuditButton = document.querySelector('.hero .button-primary');
-if (heroAuditButton) {
-  heroAuditButton.textContent = 'Вземи безплатен аудит';
-}
-
-const statusDot = document.querySelector('.status-dot');
-if (statusDot) {
-  statusDot.textContent = 'активно';
-}
-
 const revealItems = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+const scoreElement = document.querySelector('[data-score]');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (scoreElement && !reduceMotion) {
+  const target = Number(scoreElement.dataset.score || scoreElement.textContent);
+  let current = 41;
+
+  const tick = () => {
+    current += 1;
+    scoreElement.textContent = current;
+
+    if (current < target) {
+      window.requestAnimationFrame(tick);
     }
-  });
-}, { threshold: 0.16 });
+  };
 
-revealItems.forEach((item) => revealObserver.observe(item));
+  setTimeout(() => window.requestAnimationFrame(tick), 450);
+}
 
-const auditCard = document.querySelector('.audit-card');
+const scanner = document.querySelector('.scanner-card');
 
-if (auditCard && window.matchMedia('(pointer: fine)').matches) {
-  auditCard.addEventListener('mousemove', (event) => {
-    const rect = auditCard.getBoundingClientRect();
+if (scanner && window.matchMedia('(pointer: fine)').matches && !reduceMotion) {
+  scanner.addEventListener('mousemove', (event) => {
+    const rect = scanner.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
-    auditCard.style.transform = `translateY(-8px) rotateX(${y * -4}deg) rotateY(${x * 5}deg)`;
+
+    scanner.style.transform = `rotateX(${y * -3.5}deg) rotateY(${x * 4.5}deg) translateY(-4px)`;
   });
 
-  auditCard.addEventListener('mouseleave', () => {
-    auditCard.style.transform = '';
+  scanner.addEventListener('mouseleave', () => {
+    scanner.style.transform = '';
   });
 }
